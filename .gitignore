@@ -1,0 +1,38 @@
+```
+# Python temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Kaggle/Jupyter notebook files
+.ipynb_checkpoints/
+*.ipynb
+
+# Dataset (exclude as it’s hosted on Kaggle)
+*.csv
+/kaggle/input/
+
+# Temporary Kaggle output files
+*.zip
+/kaggle/working/*_temp/
+
+# Environment and IDE files
+.venv/
+env/
+*.env
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and caches
+*.log
+*.cache
+
+# Large files (optional, if you add other large files later)
+*.h5
+*.pkl  # Uncomment if you decide to exclude model artifacts later
+```
