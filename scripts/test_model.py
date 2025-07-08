@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics import f1_score
 import os
+from utils import FeatureEngineer
 
 # Load artifacts
 artifacts_dir = "artifacts"
@@ -25,9 +26,9 @@ except FileNotFoundError:
 
 # Verify columns
 expected_columns = ['diagnosis', 'age', 'sleep_quality_index', 'brain_fog_level', 'physical_pain_score',
-                    'stress_level', 'depression_phq9_score', 'fatigue_severity_scale_score',
-                    'pem_duration_hours', 'hours_of_sleep_per_night', 'pem_present',
-                    'gender', 'work_status', 'social_activity_level', 'exercise_frequency',
+                    'stress_level', 'depression_phq9_score', 'fatigue_severity_scale_score', 
+                    'pem_duration_hours', 'hours_of_sleep_per_night', 'pem_present', 
+                    'gender', 'work_status', 'social_activity_level', 'exercise_frequency', 
                     'meditation_or_mindfulness']
 if not all(col in test_df.columns for col in expected_columns):
     print(f"Error: Missing columns in test_data.csv. Expected: {expected_columns}")
