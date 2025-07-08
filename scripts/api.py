@@ -1,8 +1,10 @@
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import joblib
 import pandas as pd
 import numpy as np
+from utils import FeatureEngineer
 
 app = FastAPI()
 
@@ -43,6 +45,7 @@ async def predict(input_data: PredictionInput):
         categorical_cols = ['gender', 'work_status', 'social_activity_level', 'exercise_frequency',
                             'meditation_or_mindfulness']
         for col in categorical_cols:
+            data[col] = data[col].fillna('Unknown')
             if data[col].dtype not in ['int64', 'int32', 'float64', 'float32']:
                 data[col] = label_encoders[col].transform(data[col].astype(str))
 
